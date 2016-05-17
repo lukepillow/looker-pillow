@@ -12,19 +12,26 @@
 
   - dimension: latitude
     type: number
+    hidden: true
     sql: ${TABLE}.latitude
 
   - dimension: longitude
     type: number
+    hidden: true
     sql: ${TABLE}.longitude
 
   - dimension: state
     type: string
     sql: ${TABLE}.state
 
-  - dimension: zipcode
+  - dimension: zip_code
     type: string
     sql: ${TABLE}.zipcode
+    
+  - dimension: location
+    type: location
+    sql_latitude: ${latitude}
+    sql_longitude: ${longitude}
 
   - measure: count
     type: count
